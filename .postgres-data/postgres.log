@@ -1,0 +1,40 @@
+2026-09-18 18:24:37.999 IST [27564] LOG:  starting PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit
+2026-09-18 18:24:38.004 IST [27564] LOG:  listening on IPv6 address "::1", port 5433
+2026-09-18 18:24:38.004 IST [27564] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-09-18 18:24:38.085 IST [15248] LOG:  database system was shut down at 2026-09-18 18:24:18 IST
+2026-09-18 18:24:38.092 IST [27564] LOG:  database system is ready to accept connections
+2026-09-18 18:29:38.077 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 18:31:38.321 IST [7688] LOG:  checkpoint complete: wrote 1096 buffers (6.7%), wrote 3 SLRU buffers; 1 WAL file(s) added, 0 removed, 0 recycled; write=119.839 s, sync=0.317 s, total=120.245 s; sync files=347, longest=0.008 s, average=0.001 s; distance=5305 kB, estimate=5305 kB; lsn=0/1D23548, redo lsn=0/1D1F7A0
+2026-09-18 18:45:13.269 IST [13704] ERROR:  relation "expeditions" does not exist at character 363
+2026-09-18 18:45:13.269 IST [13704] STATEMENT:  SELECT expeditions.id AS expeditions_id, expeditions.code AS expeditions_code, expeditions.name AS expeditions_name, expeditions.status AS expeditions_status, expeditions.description AS expeditions_description, expeditions.start_date AS expeditions_start_date, expeditions.end_date AS expeditions_end_date, expeditions.created_at AS expeditions_created_at 
+	FROM expeditions 
+	WHERE expeditions.code = $1::VARCHAR 
+	 LIMIT $2::INTEGER
+2026-09-18 18:45:52.317 IST [21668] ERROR:  column transports.expedition_id does not exist at character 116
+2026-09-18 18:45:52.317 IST [21668] STATEMENT:  SELECT transports.id AS transports_id, transports.code AS transports_code, transports.status AS transports_status, transports.expedition_id AS transports_expedition_id, transports.origin_station_id AS transports_origin_station_id, transports.destination_station_id AS transports_destination_station_id, transports.planned_departure AS transports_planned_departure, transports.actual_departure AS transports_actual_departure, transports.planned_arrival AS transports_planned_arrival, transports.estimated_arrival AS transports_estimated_arrival, transports.actual_arrival AS transports_actual_arrival, transports.eta_days AS transports_eta_days, transports.delay_days AS transports_delay_days, transports.created_at AS transports_created_at 
+	FROM transports 
+	WHERE transports.code = $1::VARCHAR 
+	 LIMIT $2::INTEGER
+2026-09-18 18:46:51.830 IST [10988] ERROR:  null value in column "asset_id" of relation "asset_maintenance" violates not-null constraint
+2026-09-18 18:46:51.830 IST [10988] DETAIL:  Failing row contains (e5bbaeeb-7482-4f75-8183-69924c187e02, null, BRAKE_CHECK, SCHEDULED, 2026-08-29 13:16:51.821218+05:30, 2026-09-21 13:16:51.821228+05:30, Winter operations require brake inspection before the next route..., 2026-09-18 13:16:51.829408+05:30).
+2026-09-18 18:46:51.830 IST [10988] STATEMENT:  INSERT INTO asset_maintenance (id, asset_id, maintenance_type, status, performed_at, next_due_at, notes, created_at) VALUES ($1::UUID, $2::UUID, $3::VARCHAR, $4::VARCHAR, $5::TIMESTAMP WITH TIME ZONE, $6::TIMESTAMP WITH TIME ZONE, $7::VARCHAR, $8::TIMESTAMP WITH TIME ZONE)
+2026-09-18 18:49:38.364 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 18:49:52.891 IST [7688] LOG:  checkpoint complete: wrote 131 buffers (0.8%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=14.352 s, sync=0.132 s, total=14.528 s; sync files=86, longest=0.034 s, average=0.002 s; distance=638 kB, estimate=4838 kB; lsn=0/1DBF1F8, redo lsn=0/1DBF168
+2026-09-18 18:54:38.907 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 18:54:40.426 IST [7688] LOG:  checkpoint complete: wrote 13 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.420 s, sync=0.049 s, total=1.520 s; sync files=12, longest=0.032 s, average=0.005 s; distance=48 kB, estimate=4359 kB; lsn=0/1DCB278, redo lsn=0/1DCB220
+2026-09-18 18:59:38.436 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 18:59:39.205 IST [7688] LOG:  checkpoint complete: wrote 6 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.663 s, sync=0.057 s, total=0.769 s; sync files=7, longest=0.039 s, average=0.009 s; distance=15 kB, estimate=3925 kB; lsn=0/1DCF188, redo lsn=0/1DCF130
+2026-09-18 19:15:38.102 IST [18552] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-09-18 19:19:38.235 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 19:19:39.367 IST [7688] LOG:  checkpoint complete: wrote 10 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.105 s, sync=0.015 s, total=1.132 s; sync files=10, longest=0.003 s, average=0.002 s; distance=30 kB, estimate=3535 kB; lsn=0/1DD6C60, redo lsn=0/1DD6C08
+2026-09-18 19:24:38.384 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 19:24:39.309 IST [7688] LOG:  checkpoint complete: wrote 8 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.886 s, sync=0.012 s, total=0.926 s; sync files=9, longest=0.004 s, average=0.002 s; distance=17 kB, estimate=3183 kB; lsn=0/1DDB3E0, redo lsn=0/1DDB388
+2026-09-18 19:29:38.322 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 19:29:38.903 IST [7688] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.562 s, sync=0.007 s, total=0.582 s; sync files=5, longest=0.003 s, average=0.002 s; distance=26 kB, estimate=2868 kB; lsn=0/1DE1DA0, redo lsn=0/1DE1D48
+2026-09-18 19:34:23.878 IST [7120] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-09-18 19:34:23.878 IST [18180] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-09-18 19:34:38.916 IST [7688] LOG:  checkpoint starting: time
+2026-09-18 19:34:39.265 IST [7688] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.334 s, sync=0.002 s, total=0.350 s; sync files=2, longest=0.001 s, average=0.001 s; distance=11 kB, estimate=2582 kB; lsn=0/1DE4BA0, redo lsn=0/1DE4B48
